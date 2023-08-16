@@ -1,16 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+import 'package:mkshit_madan_bloc/features/cart/bloc/cart_bloc.dart';
 import 'package:mkshit_madan_bloc/features/home/bloc/home_bloc.dart';
 import 'package:mkshit_madan_bloc/features/home/models/home_product_data_model.dart';
 
-class ProductTileWidget extends StatelessWidget {
+class CartTileWidget extends StatelessWidget {
   final ProductDataModel productDataModel;
-  final HomeBloc homeBloc;
-  const ProductTileWidget({
+  final CartBloc cartBloc;
+  const CartTileWidget({
     Key? key,
     required this.productDataModel,
-    required this.homeBloc,
+    required this.cartBloc,
   }) : super(key: key);
 
   @override
@@ -64,14 +65,14 @@ class ProductTileWidget extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        homeBloc.add(HomeProductWishlistButtonClickedEvent(
-                            clickedProduct: productDataModel));
+                        // homeBloc.add(HomeProductWishlistButtonClickedEvent(
+                        //     clickedProduct: productDataModel));
                       },
                       icon: Icon(Icons.favorite_border)),
                   IconButton(
                       onPressed: () {
-                        homeBloc.add(HomeProductCartButtonClickedEvent(
-                            clickedProduct: productDataModel));
+                        // homeBloc.add(HomeProductCartButtonClickedEvent(
+                        //     clickedProduct: productDataModel));
                       },
                       icon: Icon(Icons.shopping_bag_outlined))
                 ],
